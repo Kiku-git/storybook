@@ -1,8 +1,9 @@
-import { configure } from '@storybook/html';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/html';
 
-setOptions({
-  hierarchyRootSeparator: /\|/,
+addParameters({
+  options: {
+    hierarchyRootSeparator: /\|/,
+  },
 });
 
 // automatically import all files ending in *.stories.js

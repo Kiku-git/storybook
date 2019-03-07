@@ -1,4 +1,5 @@
 dist
+lib/**/dll
 build
 coverage
 node_modules
@@ -8,6 +9,8 @@ built-storybooks
 lib/cli/test
 *.bundle.js
 *.js.map
+*.ts
+*.tsx
 
 !.remarkrc.js
 !.babelrc.js
@@ -15,3 +18,8 @@ lib/cli/test
 !.eslintrc-markdown.js
 !.jest.config.js
 !.storybook
+
+REACT_NATIVE
+examples-native
+react-native
+ondevice-*

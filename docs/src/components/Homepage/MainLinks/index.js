@@ -24,11 +24,9 @@ class MainLinks extends React.Component {
             <h2>Try Now</h2>
             <pre>
               <code>
-                npm i -g @storybook/cli
+                cd my-react-vue-angular-app
                 <br />
-                cd my-react-app
-                <br />
-                getstorybook
+                npx -p @storybook/cli sb init
                 <br />
               </code>
             </pre>
@@ -100,6 +98,9 @@ class MainLinks extends React.Component {
               </Link>
               <ul>
                 <li>
+                  <Link to="/configurations/options-parameter/">Storybook options</Link>
+                </li>
+                <li>
                   <Link to="/configurations/custom-babel-config/">Babel configurations</Link>
                 </li>
                 <li>
@@ -127,9 +128,6 @@ class MainLinks extends React.Component {
                 </li>
                 <li>
                   <Link to="/addons/using-addons/">Using Addons</Link>
-                </li>
-                <li>
-                  <Link to="/addons/addon-gallery/">Addon Gallery</Link>
                 </li>
                 <li>
                   <Link to="/addons/writing-addons/">Writing Addons</Link>

@@ -1,11 +1,15 @@
 {
   "command": {
     "publish": {
-      "allowBranch": "master"
+      "allowBranch": [
+        "master",
+        "next",
+        "release/*"
+      ]
     }
   },
   "npmClient": "yarn",
   "useWorkspaces": true,
   "registry": "https://registry.npmjs.org",
-  "version": "4.0.0-rc.1"
+  "version": "5.0.0"
 }

@@ -23,6 +23,8 @@ import '@storybook/addon-links/register';
 import '@storybook/addon-notes/register';
 ```
 
+Once created, you'll have to restart storybook to make the underlying webpack aware of the addons file.
+
 This will register all the addons and you'll be able to see the actions and notes panels (in that order) when you are viewing the story. (Links do not register a tab--check individual addon docs to see which Storybook features they use!)
 
 ![Stories without notes](../static/stories-without-notes.png)
@@ -54,4 +56,23 @@ Then you'll be able to see those notes when you are viewing the story.
 
 ![Stories with notes](../static/stories-with-notes.png)
 
-Just like this, you can install any other addon and use it. Have a look at our [addon gallery](/addons/addon-gallery) to discover more addons.
+## Global Configuration
+
+Sometimes you might want to configure an addon globally, as in the case of collocating stories with components, or just simply to keep your stories file cleaner. To do that, you can add your decorators to a config file, typically in `.storybook/config.js`. Here's an example of how you might do that.
+
+```js
+import { configure, addParameters } from '@storybook/react';
+
+addParameters({
+  options: {
+    name: 'CRA Kitchen Sink',
+    isFullScreen: false,
+    showPanel: true,
+    // more configuration here
+  },
+});
+```
+
+Here's an example of a [production-ready config file](https://github.com/storybooks/storybook/blob/next/examples/cra-kitchen-sink/.storybook/config.js) from the cra-kitchen example.
+
+Just like this, you can install any other addon and use it. Have a look at our [addon gallery](https://storybook.js.org/addons/) to discover more addons.

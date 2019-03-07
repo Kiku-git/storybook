@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/docs',
   siteMetadata: {
     siteTitle: 'Storybook',
     baseColor: '#e64074',
@@ -14,13 +15,14 @@ module.exports = {
         '/basics/guide-vue/',
         '/basics/guide-angular/',
         '/basics/guide-mithril/',
+        '/basics/guide-ember/',
         '/basics/writing-stories/',
         '/basics/exporting-storybook/',
         '/basics/faq/',
-        '/basics/community/',
         '/basics/live-examples/',
       ],
       configurations: [
+        '/configurations/options-parameter/',
         '/configurations/default-config/',
         '/configurations/custom-webpack-config/',
         '/configurations/custom-babel-config/',
@@ -42,7 +44,6 @@ module.exports = {
       addons: [
         '/addons/introduction/',
         '/addons/using-addons/',
-        '/addons/addon-gallery/',
         '/addons/writing-addons/',
         '/addons/api/',
       ],

@@ -10,9 +10,9 @@ For more information visit: [storybook.js.org](https://storybook.js.org)
 
 The `storybook` CLI tool can be used to add Storybook to your React Native app. Install the `storybook` tool if necessary and run it from your project directory with these commands:
 
-```shell
+```sh
 cd my-rn-app
-npx -p @storybook/cli@rc sb init
+npx -p @storybook/cli sb init
 ```
 
 The next thing you need to do is make Storybook UI visible in your app.
@@ -22,16 +22,16 @@ The next thing you need to do is make Storybook UI visible in your app.
 The easiest way to use Storybook is to simply replace your App with the Storybook UI, which is possible by replacing `App.js` with a single line of code:
 
 ```js
-export default from "./storybook";
+export default from './storybook';
 ```
 
 This will get you up and running quickly, but then you lose your app!
 There are multiple options here. for example, you can export conditionally:
 
 ```js
-import StorybookUI from "./storybook";
+import StorybookUI from './storybook';
 
-import App from "./app";
+import App from './app';
 
 module.exports = __DEV__ ? StorybookUI : App;
 ```
@@ -45,19 +45,19 @@ module.exports = __DEV__ ? StorybookUI : App;
 If you want to control storybook from browser/VS Code/websockets you need to start the server.
 After initial setup start the storybook server with the storybook npm script.
 
-```shell
+```sh
 npm run storybook
 ```
 
-Now, you can open <http://localhost:7007> to view your storybook menus in the browser.
+Now, you can open `<http://localhost:7007>` to view your storybook menus in the browser.
 
-## Old standalone behaviour
+## Old standalone behavior
 
 Since storybook version v4.0 packager is removed from storybook.
 The suggested storybook usage is to include it inside your app.
-If you want to keep the old behaviour, you have to start the packager yourself with a different project root.
+If you want to keep the old behavior, you have to start the packager yourself with a different project root.
 
-```
+```sh
 npm run storybook start -p 7007 | react-native start --projectRoot storybook
 ```
 
@@ -67,11 +67,14 @@ To see your Storybook stories on the device, you should start your mobile app fo
 
 For CRNA apps:
 
-    npm run <platform>
+```sh
+npm run <platform>
+```
 
 For RN apps:
-
-    react-native run-<platform>
+```sh
+react-native run-<platform>
+```
 
 Once your app is started, changing the selected story in web browser will update the story displayed within your mobile app.
 
@@ -121,6 +124,14 @@ You can pass these parameters to getStorybookUI call in your storybook entry poi
         -- should the ui be closed initialy.
     tabOpen: Number (0)
         -- which tab should be open. -1 Navigator, 0 Preview, 1 Addons
+    initialSelection: Object (null)
+        -- initialize storybook with a specific story. In case a valid object is passed, it will take precedence over `shouldPersistSelection. ex: `{ kind: 'Knobs', story: 'with knobs' }`
+    shouldPersistSelection: Boolean (true)
+        -- initialize storybook with the last selected story.
+    shouldDisableKeyboardAvoidingView: Boolean (false)
+        -- Disable KeyboardAvoidingView wrapping Storybook's view
+    keyboardAvoidingViewVerticalOffset: Number (0)
+        -- With shouldDisableKeyboardAvoidingView=true, this will set the keyboardverticaloffset (https://facebook.github.io/react-native/docs/keyboardavoidingview#keyboardverticaloffset) value for KeyboardAvoidingView wrapping Storybook's view
 }
 ```
 

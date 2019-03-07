@@ -1,17 +1,18 @@
-import { configure } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addParameters } from '@storybook/react';
 
-setOptions({
-  name: 'CRA Kitchen Sink',
-  url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
-  goFullScreen: false,
-  showAddonsPanel: true,
-  showSearchBox: false,
-  addonPanelInRight: true,
-  sortStoriesByKind: false,
-  hierarchySeparator: /\./,
-  hierarchyRootSeparator: /\|/,
-  enableShortcuts: true,
+addParameters({
+  options: {
+    name: 'CRA Kitchen Sink',
+    url: 'https://github.com/storybooks/storybook/tree/master/examples/cra-kitchen-sink',
+    goFullScreen: false,
+    showAddonsPanel: true,
+    showSearchBox: false,
+    addonPanelInRight: true,
+    sortStoriesByKind: false,
+    hierarchySeparator: /\./,
+    hierarchyRootSeparator: /\|/,
+    enableShortcuts: true,
+  },
 });
 
 function loadStories() {
